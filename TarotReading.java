@@ -17,9 +17,4 @@ public class TarotReading {
         return drawnCard;
     }
 
-    // แสดงผลการอ่านไพ่
-    public void displayReading() {
-        System.out.println("Card Drawn: " + drawnCard.getName());
-        System.out.println("Meaning: " + drawnCard.getMeaning());
-    }
 }
