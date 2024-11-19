@@ -35,13 +35,7 @@ public class Main {
         // สร้างผู้ใช้
         User user = new User("Gib");
 
-        // ผู้ใช้จั่วไพ่ประจำวัน
-        TarotCard drawnCard = user.drawDailyCard(deck);
-
-        // ตรวจสอบว่ามีไพ่จั่วสำเร็จหรือไม่
-        if (drawnCard != null) {
-            // แสดงประวัติการอ่านไพ่ทั้งหมด
-            user.showReadings();
-        }
+        // สุ่มไพ่ประจำวัน
+        TarotCard card = user.drawDailyCard(deck);
     }
 }
