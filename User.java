@@ -20,37 +20,25 @@ public class User {
             System.out.println("No cards left in the deck.");
             return null;
         }
-
+    
         // สุ่มเลือกไพ่จากสำรับ
         Random rand = new Random();
         int index = rand.nextInt(deck.size());
         TarotCard card = deck.get(index);
         deck.remove(index);  // เอาไพ่ที่เลือกออกจากสำรับ
-
+    
         drawnCards.add(card); // เพิ่มไพ่ที่จั่วลงในประวัติของผู้ใช้
+
+        // แสดงไพ่ใบที่สุ่มล่าสุด
+
+
+        card.reveal();  // แสดงรายละเอียดของไพ่ใบนี้
+            
 
         // สร้างการอ่านไพ่ใหม่และเก็บประวัติ
         TarotReading reading = new TarotReading(this, card);
-        readings.add(reading);
-
+    
         // คืนค่าไพ่ที่จั่วออกไป
         return card;
-    }
-
-    // ฟังก์ชันแสดงประวัติการจั่วไพ่
-    public void showDrawnCards() {
-        System.out.println(name + "'s drawn cards:");
-        for (TarotCard card : drawnCards) {
-            System.out.println("Card: " + card.getName() + " | Meaning: " + card.getMeaning());
-            card.reveal();  // แสดงรายละเอียดของไพ่แต่ละใบ
-        }
-    }
-
-    // ฟังก์ชันแสดงประวัติการอ่านไพ่ทั้งหมด
-    public void showReadings() {
-        System.out.println(name + "'s tarot readings");
-        for (TarotReading reading : readings) {
-            reading.displayReading();  // แสดงผลการอ่านไพ่
-        }
     }
 }
